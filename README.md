@@ -27,9 +27,6 @@
 
 ---
 
-## Project Overview
-This project documents deploying a **LAMP stack (Linux, Apache, MariaDB, PHP)** on **AWS EC2 (Ubuntu)** and hosting a **WordPress website**.
-
 ---
 
 ## 🎯 Objectives
@@ -66,7 +63,7 @@ This project documents deploying a **LAMP stack (Linux, Apache, MariaDB, PHP)** 
           |                                        |
           |  +-------------+     +---------------+ |
           |  |   Apache    | --> |      PHP      | |
-          |  |   (2.4.x)     |     |     (8.x)     | |
+          |  |   (2.4)     |     |     (8.x)     | |
           |  +------+------+     +-------+-------+ |
           |         |                    |         |
           |         v                    v         |
