@@ -1,5 +1,5 @@
 # AWS LAMP Stack Deployment on Ubuntu Linux
-**A step-by-step LAMP stack deployment on AWS EC2 using Ubuntu, Apache, MariaDB, PHP, and WordPress, designed with public and private subnets and tested using round-robin load balancing.**
+**A step-by-step LAMP stack deployment to host a WordPress website on AWS EC2 using Ubuntu, Apache, MariaDB, and PHP.**
 
 ---
 <p align="center">
@@ -24,73 +24,67 @@
 
 ## Table of Contents
 
-- [Project Overview](#project-overview)
-- [Objectives](#objectives)
-- [Architecture Overview](#-architecture-overview)
-  - [Traffic Flow](#traffic-flow)
-- [AWS Setup Images](#aws-setup-images)
-- [AWS Resources Used](#-aws-resources-used)
-- [Security Group Design Detailed](#-security-group-design-detailed)
-- [NAT Gateway Role in Security](#-nat-gateway-role-in-security)
-- [Temporary Bastion Access Clarification](#temporary-bastion-access-clarification)
-- [Final Security Summary](#final-security-summary)
-- [Access Strategy Bastion Style](#-access-strategy-bastion-style)
-- [Apache Server Configuration](#%EF%B8%8F-apache-server-configuration)
-- [Nginx Load Balancer Configuration](#%EF%B8%8F-nginx-load-balancer-configuration)
-- [Validation](#validation)
 
 ---
 
 ## Project Overview
-
-This project demonstrates a **production-style AWS architecture** using a custom VPC where:
-
-- **Nginx** acts as a **Reverse Proxy + Load Balancer** in port `80`
-- **Two Apache web servers** run in **private subnets** in port `8080`
-- Traffic flows securely from **Internet → Nginx → Apache servers**
-- **Round-Robin load balancing** distributes requests evenly
-- Backend servers are **not publicly accessible**
-
-This setup is intentionally designed for **hands-on practice**, **cloud networking understanding**, and **DevOps fundamentals**.
+This project documents deploying a **LAMP stack (Linux, Apache, MariaDB, PHP)** on **AWS EC2 (Ubuntu)** and hosting a **WordPress website**.
 
 ---
 
-## Objectives
+## 🎯 Objectives
+- Deploy **Apache + MariaDB + PHP** on **Ubuntu EC2**
+- Host **WordPress** under a proper web root
+- Validate **Apache**, **PHP runtime**, and **database connectivity**
 
-- Understand **public vs private subnet architecture**
-- Implement **Nginx reverse proxy & load balancing**
-- Secure backend servers using **Security Group → Security Group rules**
-- Practice **Linux server administration**
-- Gain experience with **real AWS networking components**
+---
 
+### Traffic Flow
+1. Users access the site via **HTTP (80)** (optional **HTTPS (443)**)
+2. **Apache** serves WordPress files from the web root
+3. **PHP** executes WordPress code
+4. **MariaDB** stores WordPress data locally on the s
+
+---
+
+### Architecture Diagram (ASCII)
+```text
+                +-------------------------+
+                |     Internet Users      |
+                +-----------+-------------+
+                            |
+                            |  HTTP/HTTPS
+                            v
+                +-------------------------+
+                |   AWS Security Group    |
+                |  80, (443), 22 (My IP)  |
+                +-----------+-------------+
+                            |
+                            v
+          +----------------------------------------+
+          |      EC2 Instance (Ubuntu 22.04)       |
+          |                                        |
+          |  +-------------+     +---------------+ |
+          |  |   Apache    | --> |      PHP      | |
+          |  |   (2.4)     |     |     (8.x)     | |
+          |  +------+------+     +-------+-------+ |
+          |         |                    |         |
+          |         v                    v         |
+          |     WordPress            MariaDB        |
+          |                          (10.x)         |
+          +----------------------------------------+
 ---
 
 ## 🏗 Architecture Overview
 
 📂 **Architecture Diagram:**  
 <p align="center">
-  <img src="Architecture%20Diagram/Nginx-Apache-Lb-Architecture-Diagram.png" width="700">
+  <img src="Architecture%20Diagram/.png" width="700">
 </p>
 
 
 
-### Traffic Flow
 
-```
-Internet
-   ↓
-Elastic IP
-   ↓
-Nginx Load Balancer (Public Subnet)
-   ↓
-Private IP Communication
-   ↓
-Apache App Server 1 (Private Subnet)
-   ↓
-Apache App Server 2 (Private Subnet)
-```
-
----
 
 
 
