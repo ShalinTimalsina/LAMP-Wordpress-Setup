@@ -7,16 +7,17 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Apache-2.4-red?logo=apache&style=for-the-badge" />
-  <img src="https://img.shields.io/badge/MariaDB-10.x-blue?logo=mariadb&style=for-the-badge" />
-  <img src="https://img.shields.io/badge/PHP-8.x-777BB4?logo=php&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Apache-red?logo=apache&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/MariaDB-blue?logo=mariadb&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/PHP-777BB4?logo=php&style=for-the-badge" />
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Ubuntu-22.04-E95420?logo=ubuntu&style=for-the-badge" />
-  <img src="https://img.shields.io/badge/WordPress-6.x-21759B?logo=wordpress&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Ubuntu-E95420?logo=ubuntu&style=for-the-badge" />
+  <img src="https://img.shields.io/badge/WordPress-21759B?logo=wordpress&style=for-the-badge" />
   <img src="https://img.shields.io/badge/DevOps-Practices-success?style=for-the-badge" />
 </p>
+
 
 
 ---
