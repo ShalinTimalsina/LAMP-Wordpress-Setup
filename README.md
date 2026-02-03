@@ -40,7 +40,7 @@
 1. Users access the site via **HTTP (80)** (optional **HTTPS (443)**)
 2. **Apache** serves WordPress files from the web root
 3. **PHP** executes WordPress code
-4. **MariaDB** stores WordPress data locally on the s
+4. **MariaDB** stores WordPress data locally on the same instance.
 
 ---
 
@@ -72,14 +72,13 @@
           +----------------------------------------+
 
 ```
----
+
 ## 🏗 Architecture Overview
 
 📂 **Architecture Diagram:**  
 <p align="center">
   <img src="Architecture%20Diagram/.png" width="700">
 </p>
----
 
 
 
