@@ -48,7 +48,7 @@ This project documents deploying a **LAMP stack (Linux, Apache, MariaDB, PHP)** 
 ---
 
 ### Architecture Diagram (ASCII)
-```text
+```
                 +-------------------------+
                 |     Internet Users      |
                 +-----------+-------------+
@@ -66,15 +66,15 @@ This project documents deploying a **LAMP stack (Linux, Apache, MariaDB, PHP)** 
           |                                        |
           |  +-------------+     +---------------+ |
           |  |   Apache    | --> |      PHP      | |
-          |  |   (2.4)     |     |     (8.x)     | |
+          |  |   (2.4.x)     |     |     (8.x)     | |
           |  +------+------+     +-------+-------+ |
           |         |                    |         |
           |         v                    v         |
           |     WordPress            MariaDB        |
           |                          (10.x)         |
           +----------------------------------------+
----
 
+```
 ## 🏗 Architecture Overview
 
 📂 **Architecture Diagram:**  
