@@ -72,13 +72,14 @@
           +----------------------------------------+
 
 ```
+---
 ## 🏗 Architecture Overview
 
 📂 **Architecture Diagram:**  
 <p align="center">
   <img src="Architecture%20Diagram/.png" width="700">
 </p>
-
+---
 
 
 
