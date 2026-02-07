@@ -113,7 +113,7 @@
 
 
 <img src="Screenshots/AWS-EC2-Details.png" alt="EC2 Instance Details" /> 
-<img src="Screenshots/Security group AWS .png" alt="EC2 Instance Details" />
+<img src="Screenshots/Security-Group-AWS.png" alt="Security Group Details" />
 
 </details>
 
@@ -136,6 +136,7 @@ sudo apt update -y
 ```
 ✅ Verify: “All packages are up to date.” or updates complete.
 
+
 ---
 
 ## Step 4 — Install Apache
@@ -151,7 +152,9 @@ http://<EC2_PUBLIC_IP>/
 ```
 You should see the Apache2 Default Page (“It works!”).
 
-![Apache-Defaultpage-Browser](image_url)
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/apache-default-page.png" alt="Apache Default Welcome Page" />
+</details>
 
 ---
 ## Step 5 — Install PHP
@@ -164,7 +167,9 @@ php -v
 ```
 ✅ Verify: php -v prints PHP version (example: PHP 8.3.6)
 
-![Php installation and version](image_url)
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/php-version-terminal.png" alt="PHP Version Check in Terminal" />
+</details>
 
 ---
 
@@ -192,6 +197,10 @@ http://<EC2_PUBLIC_IP>/info.php
 You should see the PHP info page confirming PHP runs via Apache.
 - After verification, you can remove `info.php` later for security.
 
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/php-info-browser.png" alt="PHP Info Page in Browser" />
+</details>
+
 ---
 ## Step 6 — Install MariaDB
 
@@ -201,6 +210,10 @@ sudo systemctl enable --now mariadb
 sudo systemctl status mariadb
 ```
 ✅ Verify: status shows active (running) and MariaDB is ready for connections.
+
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/mariadb-service-status.png" alt="MariaDB Service Status Output" />
+</details>
 
 ## Step 7 — Create Database + User
 Enter MariaDB shell:
