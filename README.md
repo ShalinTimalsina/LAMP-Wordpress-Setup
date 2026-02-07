@@ -218,10 +218,11 @@ sudo systemctl status mariadb
 
 ### Secure Mariadb(`mysql_secure_installation`)
 
-- Run the security wizard:
+Run the security wizard:
 ```
 sudo mysql_secure_installation
 ```
+`This command runs a security setup wizard that hardens MariaDB by removing insecure defaults:`
 
 | Prompt (Question) | Recommended Answer |
 |------------------|-------------------|
