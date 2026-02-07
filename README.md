@@ -24,21 +24,20 @@
 1. [🎯 Objectives](#-objectives)
 2. [Traffic Flow](#traffic-flow)
 3. [Architecture](#architecture)
-4. [🏗 Architecture Overview](#-architecture-overview)
-5. [Prerequisites](#prerequisites)
-6. [Step 1 — Create EC2 Instance](#step-1--create-ec2-instance)
-7. [Step 2 — Connect to EC2](#step-2--connect-to-ec2)
-8. [Step 3 — Update Packages](#step-3--update-packages)
-9. [Step 4 — Install Apache](#step-4--install-apache)
-10. [Step 5 — Install PHP](#step-5--install-php)
-11. [Step 6 — Install MariaDB](#step-6--install-mariadb)
-12. [Step 7 — Create Database + User](#step-7--create-database--user)
-13. [Step 8 — Test DB Connection (PHP)](#step-8--test-db-connection-php)
-14. [Step 9 — Install PHP Extensions for WordPress](#step-9--install-php-extensions-for-wordpress)
-15. [Step 10 — Download & Deploy WordPress](#step-10--download--deploy-wordpress)
-16. [Step 11 — Configure WordPress (wp-config.php)](#step-11--configure-wordpress-wp-configphp)
-17. [Step 12 — Point Apache to WordPress](#step-12--point-apache-to-wordpress)
-18. [Step 13 — Run WordPress Installer](#step-13--run-wordpress-installer)
+4. [Prerequisites](#prerequisites)
+5. [Step 1 — Create EC2 Instance](#step-1--create-ec2-instance)
+6. [Step 2 — Connect to EC2](#step-2--connect-to-ec2)
+7. [Step 3 — Update Packages](#step-3--update-packages)
+8. [Step 4 — Install Apache](#step-4--install-apache)
+9. [Step 5 — Install PHP](#step-5--install-php)
+10. [Step 6 — Install MariaDB](#step-6--install-mariadb)
+11. [Step 7 — Create Database + User](#step-7--create-database--user)
+12. [Step 8 — Test DB Connection (PHP)](#step-8--test-db-connection-php)
+13. [Step 9 — Install PHP Extensions for WordPress](#step-9--install-php-extensions-for-wordpress)
+14. [Step 10 — Download & Deploy WordPress](#step-10--download--deploy-wordpress)
+15. [Step 11 — Configure WordPress (wp-config.php)](#step-11--configure-wordpress-wp-configphp)
+16. [Step 12 — Point Apache to WordPress](#step-12--point-apache-to-wordpress)
+17. [Step 13 — Run WordPress Installer](#step-13--run-wordpress-installer)
 
 ---
 
@@ -89,16 +88,6 @@
           |                           (10.x)        |
           +----------------------------------------+
 ```
-
----
-
-## 🏗 Architecture Overview
-
-📂 **Architecture Diagram:** <p align="center">
-  <img src="Architecture%20Diagram/.png" width="700">
-</p>
-
----
 
 ## Prerequisites
 
