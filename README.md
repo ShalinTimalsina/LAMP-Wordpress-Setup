@@ -205,7 +205,8 @@ sudo mysql
 Create DB + user (replace password with your own):
 - DB --> `testdb` in this example.
 - DB user --> `test` in this example
-- `You may replace with your own` 
+- `You may replace with your own`
+  
 ```
 CREATE DATABASE wordpress_db;
 
@@ -311,10 +312,68 @@ You should see folders like:
 - `wp-content`
 - `wp-includes`
 
+## Step 11 — Configure WordPress (`wp-config.php`)
 
+Copy sample config file:
+```
+sudo cp /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
+```
 
+Edit config:
 
+```
+sudo nano /var/www/wordpress/wp-config.php
+```
+Update these fields:
+```
+define( 'DB_NAME', 'wordpress_db' );
+define( 'DB_USER', 'wordpress_user' );
+define( 'DB_PASSWORD', 'CHANGE_THIS_PASSWORD' );
+define( 'DB_HOST', 'localhost' );
+```
+✅ Verify: DB constants are updated correctly.
 
+Step 12 — Point Apache to WordPress
+
+Edit default Apache vhost:
+```
+sudo nano /etc/apache2/sites-available/000-default.conf
+```
+
+Find DocumentRoot and set it to:
+```
+DocumentRoot /var/www/wordpress
+```
+
+Restart Apache:
+```
+sudo systemctl restart apache2
+```
+✅ Verify: No restart errors.
+
+## Step 13 — Run WordPress Installer
+
+Open:
+```
+http://<EC2_PUBLIC_IP>/
+```
+
+Fill:
+
+* Site title
+* Admin username
+* Admin password
+* Admin email
+
+✅ Verify: After install you can log in:
+
+```
+http://<EC2_PUBLIC_IP>/wp-admin/
+```
+You should see:
+
+* WordPress dashboard
+* Homepage with "Hello world!" post
 
 
 
