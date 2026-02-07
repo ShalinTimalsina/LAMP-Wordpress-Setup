@@ -229,16 +229,87 @@ EXIT;
 ```
 ✅ Verify: You can see your database listed.
 
+## Step 8 — Test DB Connection (PHP)
+
+Create a database connection test file:
+```
+sudo nano /var/www/html/dbtest.php
+```
+Paste:
+```
+<?php
+$servername = "localhost"; 
+$username = "wordpress_user_you_made";
+$password = "CHANGE_THIS_PASSWORD";
+$dbname = "wordpress_db";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+echo "Connected successfully to MariaDB!";
+```
+
+✅ Verify (Browser):
+
+`http://<EC2_PUBLIC_IP>/dbtest.php`
+
+You should see:
+- `Connected successfully to MariaDB!`
+
+## Now, Clean up test files
+
+Remove test files after verification:
+```
+sudo rm /var/www/html/dbtest.php
+sudo rm /var/www/html/info.php
+```
+Why to remove them??
+
+- `Security`: Test files like phpinfo() reveal server configuration that attackers can exploit.
+
+- `Cleanliness`: Removing temporary files keeps the web root organized and production-ready.
+
+- `Prevent Accidental Access`: Test files may expose debug info or sample data to users.
 
 
 
+## Step 9 — Install PHP Extensions for WordPress
 
+Install required WordPress PHP extensions:
+```
+sudo apt install php-curl php-mbstring php-gd php-xml php-xmlrpc php-soap php-intl php-zip php-bcmath php-imagick -y
+sudo systemctl restart apache2
+```
+✅ Verify: No errors; Apache restarts successfully.
 
+## Step 10 — Download & Deploy WordPress
 
+Go to `/tmp` and download WordPress:
+```
+cd /tmp
+curl -O https://wordpress.org/latest.tar.gz
+tar -xvzf latest.tar.gz
+```
+Move WordPress to /var/www:
+```
+sudo mv wordpress /var/www/
+```
+Remove Apache default index:
+```
+sudo rm /var/www/html/index.html
+```
+✅ Verify: WordPress files exist:
+```
+ls /var/www/wordpress
+```
+You should see folders like:
 
-
-
-
+- `wp-admin`
+- `wp-content`
+- `wp-includes`
 
 
 
