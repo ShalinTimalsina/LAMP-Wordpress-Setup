@@ -173,6 +173,9 @@ Install PHP + Apache integration + MySQL driver:
 sudo apt install php libapache2-mod-php php-mysql -y
 php -v
 ```
+🤔 Why?
+- We install libapache2-mod-php to create a bridge between Apache and PHP. Without this, Apache would just download PHP files as text instead of executing them as code.
+  
 ✅ Verify: php -v prints PHP version (example: PHP 8.3.6)
 
 <details> 
@@ -395,6 +398,8 @@ Copy sample config file:
 ```bash
 sudo cp /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
 ```
+🤔 Why? 
+WordPress doesn't come with a `wp-config.php` file by default; it only provides a sample. We copy the sample to create the real configuration file where we will store our database credentials.
 
 Edit config:
 
@@ -423,6 +428,8 @@ Find DocumentRoot and set it to:
 ```apache
 DocumentRoot /var/www/wordpress
 ```
+🤔 Why?
+By default, Apache looks in `/var/www/html`. Since we moved WordPress to `/var/www/wordpress`, we must update this path. If we skipped this, visiting your IP would show a "404 Not Found" or the default Apache page instead of your site.
 
 Restart Apache:
 ```bash
