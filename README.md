@@ -111,7 +111,8 @@
 ✅ **Verify:** Instance is running and you have its **Public IPv4 address**.
 <details> <summary>📸 <b>Click to view screenshot</b></summary>
 
-<img src="LINK_TO_IMAGE_HERE" alt="Step 1 Screenshot" /> </details>
+
+<img src="Screenshots/apache-default-page.png" alt="Apache Default Page" /> </details>
 
 ---
 
