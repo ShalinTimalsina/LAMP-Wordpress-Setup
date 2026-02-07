@@ -399,7 +399,7 @@ Copy sample config file:
 sudo cp /var/www/wordpress/wp-config-sample.php /var/www/wordpress/wp-config.php
 ```
 🤔 Why? 
-WordPress doesn't come with a `wp-config.php` file by default; it only provides a sample. We copy the sample to create the real configuration file where we will store our database credentials.
+- WordPress doesn't come with a `wp-config.php` file by default; it only provides a sample. We copy the sample to create the real configuration file where we will store our database credentials.
 
 Edit config:
 
@@ -429,7 +429,7 @@ Find DocumentRoot and set it to:
 DocumentRoot /var/www/wordpress
 ```
 🤔 Why?
-By default, Apache looks in `/var/www/html`. Since we moved WordPress to `/var/www/wordpress`, we must update this path. If we skipped this, visiting your IP would show a "404 Not Found" or the default Apache page instead of your site.
+- By default, Apache looks in `/var/www/html`. Since we moved WordPress to `/var/www/wordpress`, we must update this path. If we skipped this, visiting your IP would show a "404 Not Found" or the default Apache page instead of your site.
 
 Restart Apache:
 ```bash
