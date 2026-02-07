@@ -222,7 +222,7 @@ Run the security wizard:
 ```
 sudo mysql_secure_installation
 ```
-`This command runs a security setup wizard that hardens MariaDB by removing insecure defaults:`
+- This command runs a security setup wizard that hardens MariaDB by removing insecure defaults
 
 | Prompt (Question) | Recommended Answer |
 |------------------|-------------------|
