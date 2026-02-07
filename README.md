@@ -111,7 +111,9 @@
 | HTTPS| 443  | 0.0.0.0/0 |
 
 ✅ **Verify:** Instance is running and you have its **Public IPv4 address**.
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
 
+<img src="LINK_TO_IMAGE_HERE" alt="Step 1 Screenshot" /> </details>
 ---
 
 ## Step 2 — Connect to EC2
