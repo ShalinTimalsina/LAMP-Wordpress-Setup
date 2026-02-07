@@ -42,6 +42,10 @@
 3. **PHP** executes WordPress code
 4. **MariaDB** stores WordPress data locally on the same instance.
 
+## Architecture
+
+**User Browser → EC2 Public IP → Apache (port 80/443) → PHP → MariaDB (localhost:3306) → WordPress files in `/var/www/wordpress` (Apache `DocumentRoot` points here)**
+
 ---
 
 ### Architecture Diagram (ASCII)
@@ -80,18 +84,150 @@
   <img src="Architecture%20Diagram/.png" width="700">
 </p>
 
+---
+
+## Prerequisites
+
+- An AWS account with access to EC2  
+- SSH keypair to connect to the instance  
+- Ubuntu 24.04 EC2 instance  
+- Open inbound ports:
+  - **HTTP (80)**
+  - **HTTPS (443)**
+  - **SSH (22)** *(restricted to your IP only)*
+
+---
+
+## Step 1 — Create EC2 Instance
+
+1. Launch an **Ubuntu 24.04** EC2 instance.
+2. Choose an instance type `As you like`.
+3. Configure a **Security Group** with inbound rules:
+
+| Type  | Port | Source |
+|------|------|--------|
+| SSH  | 22   | Your IP only |
+| HTTP | 80   | 0.0.0.0/0 |
+| HTTPS| 443  | 0.0.0.0/0 |
+
+✅ **Verify:** Instance is running and you have its **Public IPv4 address**.
+
+---
+
+## Step 2 — Connect to EC2
+
+From your local machine:
+
+```bash
+ssh -i /path/to/your-key.pem ubuntu@<EC2_PUBLIC_IP>
+```
+✅ Verify: You land on the EC2 shell as ubuntu@...
+---
+
+## Step 2 — Connect to EC2
+```
+sudo apt update -y
+
+```
+✅ Verify: “All packages are up to date.” or updates complete.
+
+---
+
+## Step 4 — Install Apache
+
+```
+sudo apt install apache2 -y
+sudo systemctl enable --now apache2
+```
+✅ Verify (Browser): Open:
+
+```
+http://<EC2_PUBLIC_IP>/
+```
+You should see the Apache2 Default Page (“It works!”).
+
+![Apache-Defaultpage-Browser](image_url)
 
 
 
+## Step 5 — Install PHP
 
+Install PHP + Apache integration + MySQL driver:
 
+```
+sudo apt install php libapache2-mod-php php-mysql -y
+php -v
+```
+✅ Verify: php -v prints PHP version (example: PHP 8.3.6)
 
+![Php installation and version](image_url)
 
+----
 
+Create `info.php` to verify PHP in browser
 
+```
+sudo nano /var/www/html/info.php
+```
 
+Paste:
+```
+<?php
+phpinfo();
+```
 
+Restart Apache:
+```
+sudo systemctl restart apache2
+```
 
+✅ Verify (Browser):
+```
+http://<EC2_PUBLIC_IP>/info.php
+```
+You should see the PHP info page confirming PHP runs via Apache.
+- After verification, you can remove `info.php` later for security.
+
+## Step 6 — Install MariaDB
+
+```
+sudo apt install mariadb-server -y
+sudo systemctl enable --now mariadb
+sudo systemctl status mariadb
+```
+✅ Verify: status shows active (running) and MariaDB is ready for connections.
+
+## Step 7 — Create Database + User
+Enter MariaDB shell:
+```
+sudo mysql
+```
+Create DB + user (replace password with your own):
+- DB --> `testdb` in this example.
+- DB user --> `test` in this example
+- `You may replace with your own` 
+```
+CREATE DATABASE wordpress_db;
+
+CREATE USER 'wordpress_user'@'localhost' IDENTIFIED BY 'CHANGE_THIS_PASSWORD';
+
+GRANT ALL PRIVILEGES ON wordpress_db.* TO 'wordpress_user'@'localhost';
+
+FLUSH PRIVILEGES;
+
+EXIT;
+```
+Verify user login
+```
+mysql -u wordpress_user -p
+```
+
+Then run:
+```
+SHOW DATABASES;
+EXIT;
+```
+✅ Verify: You can see your database listed.
 
 
 
