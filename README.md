@@ -25,7 +25,7 @@
 ## Table of Contents
 
 
----
+
 
 
 ## 🎯 Objectives
@@ -113,6 +113,7 @@
 <details> <summary>📸 <b>Click to view screenshot</b></summary>
 
 <img src="LINK_TO_IMAGE_HERE" alt="Step 1 Screenshot" /> </details>
+
 ---
 
 ## Step 2 — Connect to EC2
