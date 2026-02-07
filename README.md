@@ -240,6 +240,9 @@ Verify user login
 ```
 mysql -u wordpress_user -p
 ```
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/mariadb-show-databases.png" alt="MariaDB Show Databases Command Output" />
+</details>
 
 Then run:
 ```
@@ -278,6 +281,9 @@ echo "Connected successfully to MariaDB!";
 
 You should see:
 - `Connected successfully to MariaDB!`
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/mariadb-connection-success.png" alt="MariaDB Connection Success Message" />
+</details>
 
 ## Now, Clean up test files
 
@@ -315,6 +321,10 @@ cd /tmp
 curl -O https://wordpress.org/latest.tar.gz
 tar -xvzf latest.tar.gz
 ```
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/wordpress-install.png" alt="WordPress Installation Screen" />
+</details>
+
 Move WordPress to /var/www:
 ```
 sudo mv wordpress /var/www/
@@ -334,6 +344,7 @@ You should see folders like:
 - `wp-includes`
 
 ---
+
 
 ## Step 11 — Configure WordPress (`wp-config.php`)
 
@@ -388,6 +399,11 @@ Fill:
 * Admin password
 * Admin email
 
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+<img src="Screenshots/wordpress-configuration.png" alt="MWordpress-Configuration-Screen" />
+ <img src="Screenshots/wordpress-login-page.png" alt="WordPress Login Page" /> 
+</details>
+
 ✅ Verify: After install you can log in:
 
 ```
@@ -397,7 +413,10 @@ You should see:
 
 * WordPress dashboard
 * Homepage with "Hello world!" post
-
+<details> <summary>📸 <b>Click to view screenshot</b></summary>
+  
+<img src="Screenshots/wordpress-site-page.png" alt="Live WordPress Site" />
+</details>
 
 
 
