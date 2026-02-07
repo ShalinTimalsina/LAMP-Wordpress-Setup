@@ -17,9 +17,6 @@
   <img src="https://img.shields.io/badge/WordPress-21759B?logo=wordpress&style=for-the-badge" />
   <img src="https://img.shields.io/badge/DevOps-Practices-success?style=for-the-badge" />
 </p>
-
-
-
 ---
 
 ## Table of Contents
@@ -27,14 +24,13 @@
 
 
 
-
+---
 ## 🎯 Objectives
 - Deploy **Apache + MariaDB + PHP** on **Ubuntu EC2**
 - Host **WordPress** under a proper web root
 - Validate **Apache**, **PHP runtime**, and **database connectivity**
-
 ---
-
+---
 ### Traffic Flow
 1. Users access the site via **HTTP (80)** (optional **HTTPS (443)**)
 2. **Apache** serves WordPress files from the web root
@@ -46,7 +42,7 @@
 **User Browser → EC2 Public IP → Apache (port 80/443) → PHP → MariaDB (localhost:3306) → WordPress files in `/var/www/wordpress` (Apache `DocumentRoot` points here)**
 
 ---
-
+---
 ### Architecture Diagram (ASCII)
 ```
                 +-------------------------+
@@ -75,6 +71,9 @@
           +----------------------------------------+
 
 ```
+---
+
+---
 
 ## 🏗 Architecture Overview
 
@@ -95,7 +94,7 @@
   - **HTTPS (443)**
   - **SSH (22)** *(restricted to your IP only)*
 
----
+
 
 ## Step 1 — Create EC2 Instance
 
@@ -124,9 +123,9 @@ From your local machine:
 ssh -i /path/to/your-key.pem ubuntu@<EC2_PUBLIC_IP>
 ```
 ✅ Verify: You land on the EC2 shell as ubuntu@...
----
 
-## Step 2 — Connect to EC2
+---
+## Step 3 — Update Packages
 ```
 sudo apt update -y
 
@@ -150,8 +149,7 @@ You should see the Apache2 Default Page (“It works!”).
 
 ![Apache-Defaultpage-Browser](image_url)
 
-
-
+---
 ## Step 5 — Install PHP
 
 Install PHP + Apache integration + MySQL driver:
@@ -164,7 +162,7 @@ php -v
 
 ![Php installation and version](image_url)
 
-----
+---
 
 Create `info.php` to verify PHP in browser
 
@@ -190,6 +188,7 @@ http://<EC2_PUBLIC_IP>/info.php
 You should see the PHP info page confirming PHP runs via Apache.
 - After verification, you can remove `info.php` later for security.
 
+---
 ## Step 6 — Install MariaDB
 
 ```
@@ -232,6 +231,7 @@ EXIT;
 ```
 ✅ Verify: You can see your database listed.
 
+---
 ## Step 8 — Test DB Connection (PHP)
 
 Create a database connection test file:
@@ -277,7 +277,7 @@ Why to remove them??
 
 - `Prevent Accidental Access`: Test files may expose debug info or sample data to users.
 
-
+---
 
 ## Step 9 — Install PHP Extensions for WordPress
 
@@ -287,6 +287,8 @@ sudo apt install php-curl php-mbstring php-gd php-xml php-xmlrpc php-soap php-in
 sudo systemctl restart apache2
 ```
 ✅ Verify: No errors; Apache restarts successfully.
+
+---
 
 ## Step 10 — Download & Deploy WordPress
 
@@ -313,6 +315,8 @@ You should see folders like:
 - `wp-admin`
 - `wp-content`
 - `wp-includes`
+
+---
 
 ## Step 11 — Configure WordPress (`wp-config.php`)
 
