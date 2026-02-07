@@ -27,7 +27,6 @@
 
 ---
 
----
 
 ## 🎯 Objectives
 - Deploy **Apache + MariaDB + PHP** on **Ubuntu EC2**
