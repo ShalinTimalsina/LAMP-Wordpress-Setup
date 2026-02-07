@@ -112,7 +112,10 @@
 <details> <summary>📸 <b>Click to view screenshot</b></summary>
 
 
-<img src="Screenshots/apache-default-page.png" alt="Apache Default Page" /> </details>
+<img src="Screenshots/AWS-EC2-Details.png" alt="EC2 Instance Details" /> 
+<img src="Screenshots/Security group AWS .png" alt="EC2 Instance Details" />
+
+</details>
 
 ---
 
