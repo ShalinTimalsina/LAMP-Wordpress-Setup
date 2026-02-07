@@ -17,7 +17,7 @@
   <img src="https://img.shields.io/badge/WordPress-21759B?logo=wordpress&style=for-the-badge" />
   <img src="https://img.shields.io/badge/DevOps-Practices-success?style=for-the-badge" />
 </p>
----
+
 
 ## Table of Contents
 
