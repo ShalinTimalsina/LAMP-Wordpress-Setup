@@ -215,6 +215,25 @@ sudo systemctl status mariadb
 <img src="Screenshots/mariadb-service-status.png" alt="MariaDB Service Status Output" />
 </details>
 
+
+### Secure Mariadb(`mysql_secure_installation`)
+
+- Run the security wizard:
+```
+sudo mysql_secure_installation
+```
+
+| Prompt (Question) | Recommended Answer |
+|------------------|-------------------|
+| `Switch to unix_socket authentication [Y/n]` | `n` |
+| `Change the root password? [Y/n]` | `n` |
+| `Remove anonymous users? [Y/n]` | `Y` |
+| `Disallow root login remotely? [Y/n]` | `Y` |
+| `Remove test database and access to it? [Y/n]` | `Y` |
+| `Reload privilege tables now? [Y/n]` | `Y` |
+
+✅ Verify: The wizard finishes successfully and prints completion messages.
+
 ## Step 7 — Create Database + User
 Enter MariaDB shell:
 ```
