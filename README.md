@@ -463,7 +463,7 @@ Fill:
 ✅ Verify: After install you can log in:
 
 ```text
-http://<EC2_PUBLIC_IP>/wp-admin/
+http://<EC2_PUBLIC_IP>
 ```
 You should see:
 
