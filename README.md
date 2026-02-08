@@ -479,4 +479,4 @@ You should see:
 </details>
 
 - Sometime, it just doesn't show the Website but the `dashboard` also. 
-- Browsr from a `Private` or Another `Browser`
+- Browsr from a `Private` or Another `Browser` in that case.
