@@ -477,5 +477,6 @@ You should see:
 <br>
 <img src="Screenshots/wordpress-site-page.png" alt="Live WordPress Site" />
 </details>
+
 - Sometime, it just doesn't show the Website but the `dashboard` also. 
 - Browsr from a `Private` or Another `Browser`
