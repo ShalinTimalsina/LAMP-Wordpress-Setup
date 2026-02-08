@@ -443,7 +443,7 @@ sudo systemctl restart apache2
 
 Open:
 ```text
-http://<EC2_PUBLIC_IP>/
+http://<EC2_PUBLIC_IP>/wp-admin/
 ```
 
 Fill:
@@ -458,6 +458,8 @@ Fill:
 <br>
 <img src="Screenshots/wordpress-configuration.png" alt="MWordpress-Configuration-Screen" />
 <img src="Screenshots/wordpress-login-page.png" alt="WordPress Login Page" /> 
+<img src="Screenshots/wordpress-dashboard.png" alt="WordPress-Dashboard" /> 
+  
 </details>
 
 ✅ Verify: After install you can log in:
@@ -475,3 +477,5 @@ You should see:
 <br>
 <img src="Screenshots/wordpress-site-page.png" alt="Live WordPress Site" />
 </details>
+- Sometime, it just doesn't show the Website but the `dashboard` also. 
+- Browsr from a `Private` or Another `Browser`
